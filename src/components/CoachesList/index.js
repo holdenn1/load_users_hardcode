@@ -35,9 +35,9 @@ class CoachesList extends Component {
             <ul>
                 {
                     coaches.map(coach =>(
-                        <li key={coach.id}>
-                             <CoachCard coach={coach}/>
-                        </li>
+                            <li key={coach.id}>
+                                <CoachCard coach={coach}/>
+                            </li>
                         )
                     )
                 }

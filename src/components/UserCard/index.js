@@ -17,16 +17,16 @@ function CoachCard (props) {
 
     return(
         <div>
-        <UserPicture
-            style={imgStyle}
-            lastName={lastName}
-            firstName={firstName}
-            src={profilePicture}
-        />
-        <div>
-            <div>{fullName}</div>
-            <div>Level{level}</div>
-        </div>
+            <UserPicture
+                style={imgStyle}
+                lastName={lastName}
+                firstName={firstName}
+                src={profilePicture}
+            />
+            <div>
+                <div>{fullName}</div>
+                <div>Level{level}</div>
+            </div>
             <div>
 
             </div>

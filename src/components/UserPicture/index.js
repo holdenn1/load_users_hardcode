@@ -13,28 +13,28 @@ class UserPicture extends Component{
     onErrorHandler = (e)  => {
         console.dir(e);
         this.setState({
-                error: e.error
+            error: e.error
         });
     };
 
     render() {
         const {error} = this.state;
-        const {src, firstName, lastName, style, className} = this.props;
+        const {src, firstName, lastName} = this.props;
         return(
-            (error || src)
-            ?
-                <span style={style} className={className}>{`${firstName.charAt(0)}${lastName.charAt(0)}`}</span>
+            (error || !src)
+                ?
+                <span  {...this.props}>{`${firstName.charAt(0)}${lastName.charAt(0)}`}</span>
                 :
-                <img style={style} className={className} src={src} alt="user picture" onError={this.onErrorHandler}/>
+                <img {...this.props} src={src} alt="user picture" onError={this.onErrorHandler}/>
 
         )
     }
 
 }
 
+
 UserPicture.defaultProps = {
-    style:{},
-    className: ''
+
 
 };
 UserPicture.propTypes = {
