@@ -6,26 +6,25 @@ class UserPicture extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            error: null
+            isError: false
         };
     }
 
     onErrorHandler = (e)  => {
-        console.dir(e);
         this.setState({
-            error: e.error
+            isError: true
         });
     };
 
     render() {
-        const {error} = this.state;
-        const {src, firstName, lastName} = this.props;
+        const {isError} = this.state;
+        const {src, firstName, lastName, style, className} = this.props;
         return(
-            (error || !src)
+            (isError || !src)
                 ?
-                <span  {...this.props}>{`${firstName.charAt(0)}${lastName.charAt(0)}`}</span>
+                <span  style={style}>{`${firstName.charAt(0)}${lastName.charAt(0)}`}</span>
                 :
-                <img {...this.props} src={src} alt="user picture" onError={this.onErrorHandler}/>
+                <img style={style} className={className} src={src} alt="user picture" onError={this.onErrorHandler}/>
 
         )
     }
@@ -34,8 +33,8 @@ class UserPicture extends Component{
 
 
 UserPicture.defaultProps = {
-
-
+    style:{},
+    className: "",
 };
 UserPicture.propTypes = {
     src:PropTypes.string.isRequired,
