@@ -112,5 +112,4 @@ class CoachesList extends Component {
     }
 }
 
-
 export default CoachesList;
